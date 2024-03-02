@@ -1,12 +1,8 @@
-// Module Wrapper Function
-/*
-( function (exports, require, module, __filename, __dirname) {
-    // module code goes here (where your code runs)
-})
-*/
+const Logger = require('./logger');
 
-const Person = require('./person');
+const logger = new Logger();
 
-const person1 = new Person('Kenji', 5)
+logger.on('message', data => console.log('Called Listener', data));
 
-person1.greeting();
+logger.log('hello!');
+logger.log('hi!')
